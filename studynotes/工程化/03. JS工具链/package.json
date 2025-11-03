@@ -1,0 +1,21 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "source.js",
+  "scripts": {
+    "compile": "babel babel/source.js -o babel/target.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "core-js": "^3.32.2",
+    "regenerator": "^0.14.10"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.22.15",
+    "@babel/core": "^7.22.17",
+    "@babel/plugin-transform-optional-chaining": "^7.22.15",
+    "@babel/preset-env": "^7.22.15"
+  }
+}
