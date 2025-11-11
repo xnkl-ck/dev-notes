@@ -19,8 +19,17 @@ const Hero = (() => {
         }
     }
 })();
-
+//拿到Hero.prototype的所有字符串键 gongji constructor
 const h = new Hero(3, 6, 3);
-const sybs = Object.getOwnPropertySymbols(Hero.prototype);
+const sybs = Object.getOwnPropertySymbols(Hero.prototype)
 const prop = sybs[0];
 console.log(h[prop](3, 5))
+console.log(sybs)
+
+
+
+const h2 = new Hero(3, 6, 3);
+const sybs2 = Object.getOwnPropertySymbols(h2.__proto__)
+// const prop = sybs[0];
+// console.log(h[prop](3, 5))
+console.log(sybs2)

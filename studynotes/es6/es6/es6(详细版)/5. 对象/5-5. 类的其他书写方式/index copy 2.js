@@ -36,3 +36,4 @@ class Animal {
 }
 
 var a = new Animal("狗", "旺财", 3, "男");
+console.log(a.age);

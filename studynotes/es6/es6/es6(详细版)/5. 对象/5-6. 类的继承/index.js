@@ -42,6 +42,10 @@ class Dog extends Animal {
     }
 }
 
-//下面的代码逻辑有误
+//下面的代码逻辑正确
 const a = new Dog("旺财", 3, "公")
 a.print();
+
+//下面代码逻辑有问题，因为Animal不能直接创建对象
+const b = new Animal("犬类", "旺财", 3, "公");
+b.print();

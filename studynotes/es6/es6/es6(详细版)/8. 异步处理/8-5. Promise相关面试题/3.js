@@ -14,3 +14,10 @@ setTimeout(() => {
   console.log('promise1', promise1);
   console.log('promise2', promise2);
 }, 2000);
+
+
+
+// promise1 Promise { <pending> }
+// promise2 Promise { <pending> }
+// promise1 Promise { <rejected>: undefined }
+// promise2 Promise { 2 }

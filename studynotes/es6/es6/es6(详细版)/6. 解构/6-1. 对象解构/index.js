@@ -10,6 +10,6 @@ const user = {
 //解构出user中的name、province
 //定义两个变量name、province
 //再解构
-const { name, address: { province } } = user;
+const { name, address,address: { province } } = user;
 
-console.log(name, address, province)
+console.log(name, province,address)

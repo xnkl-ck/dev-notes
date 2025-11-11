@@ -9,3 +9,4 @@ promise.then(() => {
 });
 
 console.log(4);
+

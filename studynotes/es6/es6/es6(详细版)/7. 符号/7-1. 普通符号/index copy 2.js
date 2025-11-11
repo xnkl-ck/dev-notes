@@ -29,3 +29,8 @@ class Hero {
         return Math.random() * (max - min) + min;
     }
 }
+// 1. 创建英雄实例 (实例化)
+const myHero = new Hero(50, 500, 20); 
+
+// 2. 发出指令 (调用方法)
+myHero.gongji();
