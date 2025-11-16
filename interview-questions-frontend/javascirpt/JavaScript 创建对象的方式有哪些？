@@ -1,0 +1,138 @@
+# **JavaScript 创建对象的方式有哪些？**
+
+## 前言
+
+JavaScript 是一门灵活多变的语言，对象是其核心数据结构。创建对象的方式多种多样，不同方式在使用场景、底层原理和性能表现上各有特点。深入理解这些方式，能够帮助我们更高效地组织代码和实现功能。本文将全面介绍 JavaScript 中常见的对象创建方式及其特点。
+
+## 创建对象的主要方式
+
+### 1. 对象字面量
+
+最简单直接的创建对象方式。
+
+```plain
+const obj = {
+  name: 'Alice',
+  age: 25
+};
+```
+
+优点是语法简洁，适用于定义固定属性的对象。
+
+### 2. `new Object()` 构造函数
+
+通过内置的 `Object` 构造函数创建。
+
+```plain
+const obj = new Object();
+obj.name = 'Alice';
+```
+
+与对象字面量效果类似，但语法冗长，不常用。
+
+### 3. 构造函数
+
+自定义函数配合 `new` 关键字实现创建。
+
+```plain
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+const p = new Person('Bob', 30);
+```
+
+创建的对象会继承构造函数的原型，支持方法复用。
+
+### 4. `Object.create()`
+
+创建一个新对象，并指定其原型对象。
+
+```plain
+const proto = {
+  greet() {
+    console.log('Hello');
+  }
+};
+const obj = Object.create(proto);
+obj.name = 'Charlie';
+```
+
+适合需要指定原型的场景。
+
+### 5. ES6 `class` 语法
+
+通过类的语法糖创建对象实例。
+
+```plain
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  greet() {
+    console.log('Hi');
+  }
+}
+const p = new Person('David', 35);
+```
+
+语法更加清晰，功能完善。
+
+### 6. 工厂函数
+
+函数返回一个新对象，灵活创建对象。
+
+```plain
+function createPerson(name, age) {
+  return {
+    name,
+    age,
+    greet() {
+      console.log('Hello');
+    }
+  };
+}
+const p = createPerson('Eva', 28);
+```
+
+适合封装对象创建逻辑，但方法不能共享。
+
+### 7. 单例模式
+
+确保只有一个对象实例存在。
+
+```plain
+const singleton = (function() {
+  let instance;
+  function createInstance() {
+    return { name: 'Unique' };
+  }
+  return {
+    getInstance() {
+      if (!instance) {
+        instance = createInstance();
+      }
+      return instance;
+    }
+  };
+})();
+```
+
+用于控制全局唯一对象。
+
+------
+
+## 面试回答示范
+
+**问题：请介绍 JavaScript 中常见的对象创建方式？**
+
+回答示例：
+
+“JavaScript 中创建对象的方式包括：对象字面量、`new Object()`、构造函数、`Object.create()`、ES6 的 class 语法、工厂函数和单例模式。对象字面量语法简单直观；构造函数和 class 支持实例化和继承；`Object.create()` 可以指定原型；工厂函数灵活封装逻辑；单例模式保证唯一实例。”
+
+------
+
+## 总结
+
+JavaScript 提供了多种灵活的对象创建方式，适应不同的业务需求和设计模式。选择合适的创建方式，能够让代码更简洁、高效且易于维护。熟练掌握这些方法，是深入理解 JavaScript 面向对象编程的基础。
